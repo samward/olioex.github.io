@@ -10,8 +10,8 @@ It would be great if you could display the list of articles on the page, and pos
 
 Lastly, we'd like to be able to flag an article as 'seen', so when the user interacts with the article in some way it gets marked as such'. I'll leave you to decide what the interaction should be.
 
-Once you are done please email lloyd@olioex.com with the code, or a link to the code. After this we'll arrange a follow up technical interview to discuss what you submitted.
+Once you are done please email lloyd@olioex.com with the code, or a link to the code. After this we'll arrange a follow up technical interview to discuss what you submitted. Also if you haven't previously used the app it would be a good idea to have given it a go before your interview (bonus points for organising a collection 😀).
 
-If you have any questions please feel free to email myself.
+If you have any questions please feel free to email myself at any time.
 
 Cheers, Lloyd.
