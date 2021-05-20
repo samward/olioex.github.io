@@ -5,7 +5,7 @@
       crossorigin="anonymous"></script>
     <script type"text/javascript">
       function redirect() {
-        var location = $(location).attr('href')
+        location = $(location).attr('href')
 	console.log('Location: ' + location)
         var path = location.pathname.replace(/^\//, '').replace(/\/$/, '')
 	console.log('Path: ' + path)
@@ -20,6 +20,6 @@
     </script>
   </head>
   <body>
-    <a id="launch" onClick="redirect" href="https://web.olioex.com/articles/22222">Load article</a>
+    <a id="launch" onClick="redirect" href="https://web.olioex.com/articles/22222">Manually redirect</a>
   </body>
 </html>
