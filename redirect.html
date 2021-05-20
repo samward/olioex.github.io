@@ -4,23 +4,38 @@
       integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
       crossorigin="anonymous"></script>
     <script type"text/javascript">
+      function isAndroid() {
+        return (-1 !== navigator.userAgent.indexOf('Android'))
+      }
+
+      function isiOS() {
+        return [
+          'iPad Simulator',
+          'iPhone Simulator',
+          'iPod Simulator',
+          'iPad',
+          'iPhone',
+          'iPod'
+        ].includes(navigator.platform)
+        // iPad on iOS 13 detection
+        || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+      }
+
       function redirect() {
-	var isAndroid = -1 !== navigator.userAgent.indexOf('Android')
-	if (false === isAndroid) {
-          return true
-	}
         var location = 'https://web.olioex.com/login/not.a.real.token.friend'
-	console.log('Location: ' + location)
         var path = location.replace(/^\//, '').replace(/\/$/, '')
-	console.log('Path: ' + path)
-	var destination = path.replace(/^https/, 'olioex')
-	console.log('Destination: ' + destination)
-        window.location.href = destination
+        var destination = path.replace(/^https/, 'olioex')
+        var isAndroid =
+        if (true === isiOS()) {
+          return window.open(location, '_system')
+        }
+        if (true === isAndroid()) {
+          return window.location.href = destination
+        }
+        window.location.href = location
       }
       $(document).ready(
-        setTimeout(function() {
-          redirect()
-        }, 300)
+        setTimeout(function() { redirect() }, 300)
       )
       $('#launch').on('click', redirect)
     </script>
