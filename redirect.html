@@ -22,13 +22,16 @@
       }
 
       function redirect() {
-        var location = 'https://web.olioex.com/login/not.a.real.token.friend'
-        var path = location.replace(/^\//, '').replace(/\/$/, '')
-        var destination = path.replace(/^https/, 'olioex')
         if (true === isiOS()) {
-          return window.open(location, '_system')
+          location = $(location).attr('href')
+          path = location.pathname.replace(/^\//, "").replace(/\/$/, "");
+          destination = "olio:" + path + location.search
+          return window.location.href = destination
         }
         if (true === isAndroid()) {
+          var location = 'https://web.olioex.com/login/not.a.real.token.friend'
+          var path = url.replace(/^\//, '').replace(/\/$/, '')
+          var destination = path.replace(/^https/, 'olioex')
           return window.location.href = destination
         }
         window.location.href = location
