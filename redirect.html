@@ -1,5 +1,22 @@
 <html>
+  <head>
+	  <script type"text/javascript">
+	    function redirect() {
+              var location = document.getElementById('redirect').attr('href')
+	      console.log('Location: ' + location)
+              var path = location.pathname.replace(/^\//, "").replace(/\/$/, "")
+	      console.log('Path: ' + path)
+              window.location.href = "olioex://" + path + location.search
+            }
+            $(document).ready(
+              setTimeout(function() {
+                redirect()
+              }, 300)
+            )
+            $("#launch").on('click', redirect)
+	  </script>
+	</head>
 	<body>
-		<a href="olioex://web.olioex.com/articles/22222">Load article</a>
-	</body>
+	  <a id="redirect" href="https://web.olioex.com/articles/22222">Load article</a>
+  </body>
 </html>
