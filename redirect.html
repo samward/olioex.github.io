@@ -5,6 +5,10 @@
       crossorigin="anonymous"></script>
     <script type"text/javascript">
       function redirect() {
+	var isAndroid = -1 !== navigator.userAgent.indexOf('Android')
+	if (false === isAndroid) {
+          return true
+	}
         var location = 'https://web.olioex.com/login/not.a.real.token.friend'
 	console.log('Location: ' + location)
         var path = location.replace(/^\//, '').replace(/\/$/, '')
