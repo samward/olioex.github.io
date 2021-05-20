@@ -28,7 +28,7 @@
       }
 
       function redirect() {
-        var location = parseUrl('https://web.olioex.com/login/not.a.real.token.friend').attr('href')
+        var location = $(parseUrl('https://web.olioex.com/login/not.a.real.token.friend')).attr('href')
         
         if (true === isiOS()) { 
           var path = location.pathname.replace(/^\//, "").replace(/\/$/, "");
