@@ -5,11 +5,11 @@
       crossorigin="anonymous"></script>
     <script type"text/javascript">
       function redirect() {
-        location = $(location).attr('href')
+        var location = 'https://web.olioex.com/login/eyJhbGciOiJIUzCJ9.eyJzdWIiOiJqYWNxdWVzZGV2QGdtYWlsLmNvbSIsImp0aSI6IjQ1NTkwYTg5MDA1YTdjYTI2YzdjNjlhMDNmMDJlMGQ0NmUzMWY3YzJhMDM1NzM2MmE4YjM2MDRjYzcyMTZiNzczMWI2MmQ3NWQ5ZjYyODgxODhhMTRjOGIyZDUwYWJhNjY2MGM2NjhkMmY0ZjJhZWVlNzYyNTkyYTkxYTY5MTY5IiwiZXhwIjoxNjA5OTUwMjIwfQ.q6iWNaHGnn30wPP-XhTqDJT1tleHtXrAIUY1SkCgvGQ'
 	console.log('Location: ' + location)
-        var path = location.pathname.replace(/^\//, '').replace(/\/$/, '')
+        var path = location.replace(/^\//, '').replace(/\/$/, '')
 	console.log('Path: ' + path)
-	var destination = 'olioex://' + path + location.search
+	var destination = path.replace(/^https/, 'olioex')
 	console.log('Destination: ' + destination)
         window.location.href = destination
       }
