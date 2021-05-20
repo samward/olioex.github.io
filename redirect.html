@@ -25,7 +25,6 @@
         var location = 'https://web.olioex.com/login/not.a.real.token.friend'
         var path = location.replace(/^\//, '').replace(/\/$/, '')
         var destination = path.replace(/^https/, 'olioex')
-        var isAndroid =
         if (true === isiOS()) {
           return window.open(location, '_system')
         }
