@@ -26,6 +26,7 @@
           location = $(location).attr('href')
           path = location.pathname.replace(/^\//, "").replace(/\/$/, "");
           destination = "olio:" + path + location.search
+          alert('Destination: ' + destination)
           return window.location.href = destination
         }
         if (true === isAndroid()) {
