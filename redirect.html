@@ -9,7 +9,9 @@
 	console.log('Location: ' + location)
         var path = location.pathname.replace(/^\//, '').replace(/\/$/, '')
 	console.log('Path: ' + path)
-        window.location.href = 'olioex://' + path + location.search
+	var destination = 'olioex://' + path + location.search
+	console.log('Destination: ' + destination)
+        window.location.href = destination
       }
       $(document).ready(
         setTimeout(function() {
