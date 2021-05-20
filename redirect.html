@@ -4,6 +4,12 @@
       integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
       crossorigin="anonymous"></script>
     <script type"text/javascript">
+      function parseUrl(url) {
+        var a = document.createElement('a')
+        a.href = url
+        return a
+      }
+      
       function isAndroid() {
         return (-1 !== navigator.userAgent.indexOf('Android'))
       }
@@ -22,24 +28,26 @@
       }
 
       function redirect() {
-        if (true === isiOS()) {
-          location = $(location).attr('href')
-          path = location.pathname.replace(/^\//, "").replace(/\/$/, "");
-          destination = "olio:" + path + location.search
+        var location = parseUrl('https://web.olioex.com/login/not.a.real.token.friend').attr('href')
+        
+        if (true === isiOS()) { 
+          var path = location.pathname.replace(/^\//, "").replace(/\/$/, "");
+          var destination = "olio:" + path + location.search
           alert('Destination: ' + destination)
           return window.location.href = destination
         }
-        if (true === isAndroid()) {
-          var location = 'https://web.olioex.com/login/not.a.real.token.friend'
-          var path = url.replace(/^\//, '').replace(/\/$/, '')
+        if (true === isAndroid()) {          
+          var path = location.replace(/^\//, '').replace(/\/$/, '')
           var destination = path.replace(/^https/, 'olioex')
           return window.location.href = destination
         }
         // window.location.href = location
       }
+      
       $(document).ready(
         setTimeout(function() { redirect() }, 300)
       )
+      
       $('#launch').on('click', redirect)
     </script>
   </head>
