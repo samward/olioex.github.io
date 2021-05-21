@@ -31,11 +31,13 @@
         var location = parseUrl('https://web.olioex.com/login/not.a.real.token.friend')
         
         if (true === isiOS()) { 
+          alert('I am iOS')
           var path = location.pathname.replace(/^\//, "").replace(/\/$/, "")
           var destination = "olio:" + path + location.search
           return window.location.href = destination
         }
         if (true === isAndroid()) {          
+          alert('I am Android')
           var path = location.replace(/^\//, '').replace(/\/$/, '')
           var destination = path.replace(/^https/, 'olioex')
           return window.location.href = destination
