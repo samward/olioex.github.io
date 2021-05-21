@@ -38,8 +38,8 @@
         }
         if (true === isAndroid()) {          
           alert('I am Android')
-          alert(location)
-          var path = location.replace(/^\//, '').replace(/\/$/, '')
+          alert(location.toString())
+          var path = location.toString().replace(/^\//, '').replace(/\/$/, '')
           var destination = path.replace(/^https/, 'olioex')
           return window.location.href = destination
         }
